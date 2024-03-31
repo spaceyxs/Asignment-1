@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: black;
+    background-image: url('Istanbul.png');
+    background-size: cover ;
+    background-position: center;
+    scroll-behavior: smooth;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+a:hover{
+    color: firebrick;
+}
+header {
+    position: relative;
+    padding: 0.2rem;
+    width: 100%;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo img{
+    width: 300px;
+    padding: 20px;
+}
+.navbar .nav-menu{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: firebrick;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover{
+    scale: 1.05;
+    color: white;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+.dropdown_menu.open{
+    height: 240px;
+}
+.dropdown_menu .li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+@media(max-width: 992px){
+    .navbar.nav-menu,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+*/
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    font-family: 'Roboto Slab', sans-serif;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.container{
+    max-width: 80%;
+    margin: auto;
+}
+.head_container{
+    max-width: 90%;
+    margin: auto;
+}
+header {
+    position: relative;
+    height: 8vh;
+}
+
+.logo{
+    height: 10px;
+    background-image: url("https://cdn.turkishairlines.com/m/2190da9e53a70e4e/original/THY-LOGO.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position fixed;
+    width: 20%;
+    padding: 35px;
+    margin-top: 25px;
+}
+.signIn_btn button{
+    cursor: pointer;
+    border-radius: 12px;
+    border-color: transparent;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.signIn_btn button:hover{
+    background-color: firebrick;
+}
+.nav-link{
+    font-weight: bold;
+}
+.nav-menu{
+    display: flex;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.spacey{
+    display: none;
+}
+.space{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul li{
+    margin-left: 3rem;
+}
+
+header ul li a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    transition: 0.5s;
+}
+
+header ul li a:hover{
+    color: firebrick;
+}
+@media only screen and (max-width:768px) {
+    header ul{
+        display: block;
+        position fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #ffffff ;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        z-index: 20;
+    }
+    header ul.active{
+        left: 0%;
+    }
+    header ul li {
+        margin: 2.5rem 0;
+    }
+    header ul li a{
+        color: black;
+    }
+    .logo {
+        background-image: url("https://cdn.turkishairlines.com/m/14f15626e0a5407c/original/Turkish-Airlines-Small-3x-png.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position fixed;
+        width: 20%;
+        padding: 3px;
+        margin-top: 2px;
+    }
+    .spacey{
+        display: block;
+        cursor: pointer;
+    }
+    .spacey.active .space:nth-child(2){
+        opacity: 0;
+    }
+    .spacey.active .space:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .spacey.active .space:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/*----------HOME----------*/
+
+.home .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+.home .text{
+    max-width: 100%;
+    color: white;
+    margin: 10% 0 0 10%;
+}
+.home h1{
+    font-size: 40px;
+    font-weight: 400;
+    margin: 50px 0 0 50px;
+}
+.home p {
+    font-weight: 400;
+    line-height: 40px;
+    font-family: sans-serif;
+    font-size: 60px;
+    margin: 20px 0 0 50px;
+}
+/*-------------BOOK-----------*/
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.book {
+    margin-top: 10%;
+    width: 100%;
+    height: 20vh;
+    color: dimgray;
+}
+
+.book .input {
+    background: white;
+    border-radius: 15px 50px 30px;
+    padding: 20px 20px 40px 20px;
+}
+
+.book .search {
+    cursor: pointer;
+    background: firebrick;
+    border-radius: 15px;
+    padding: 20px;
+
+}
+.book .search:hover{
+    background-color: darkred;
+}
+.book .box{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    outline: none;
+    background: #A9A9A9;
+    margin-top: 20px;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+.book .search {
+    width: 20%;
+
+}
+.book .search input {
+    text-align: center;
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+.selectBox{
+    display: flex;
+    font-size: 15px;
+}
+.calender{
+    display: flex;
+    font-size: 15px;
+}
+.button-group {
+    display: flex;
+    margin-left: 153px;
+    font-size: 16px;
+}
+
+.button-group .button {
+    padding: 10px 20px;
+    margin-left: 3px;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F5F5F5;
+    color: dimgray;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button:hover {
+    background-color: firebrick;
+    border: 2px solid firebrick;
+    color: white;
+}
+
+/*---------PAGE--------*/
+.panel{
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: 150%; /* Yüksekliğin yarısından başlar */
+    transform: translateY(-50%);
+    height: 100%; /* Sayfanın yüksekliği kadar paneli uzatır */
+}
+.top{
+    margin-top: 10%;
+}
+.mtop{
+    margin-top: 5%;
+}
+.about{
+    margin-bottom: 50px;
+}
+.btn-group-1{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.btn-group-1 button{
+    font-family: 'Arial Black', sans-serif;
+    position: relative;
+    padding: 15px 30px;
+    margin-left: 3px;
+    border-radius: 5px 5px 5px 5px ;
+    border: 2px solid #A9A9A9;
+    background-color: #A9A9A9;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-group-1 button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+.btn-group-1:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-group-1 button:hover {
+    background-color: firebrick;
+}
+
+@media only screen and (max-width:768px) {
+    .home .box .text {
+        max-width: 100%;
+    }
+
+    .home .box .text::after{
+        display: none;
+    }
+
+    .about .container,
+    .book .container {
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book {
+        margin-top: 20%;
+        height: auto;
+    }
+
+    .book .search {
+        width: 100%;
+    }
+
+    .book .search input {
+        margin-top: 0;
+    }
+    .btn-group-1{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .home .text {
+        margin: 10% 0 0 0;
+    }
+
+    .home h1 {
+        font-size: 40px;
+    }
+
+    .about p,
+    .home p {
+        margin: 50px 0 0 0;
+    }
+
+}

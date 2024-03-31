@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="https://cdn.turkishairlines.com/m/14f15626e0a5407c/original/Turkish-Airlines-Small-3x-png.png" type="image/x-icon">
+
+  <!--=============== REMIXICONS ===============-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <title>Türk Hava Yolları || Turkish Airlines</title>
+</head>
+<body>
+  <header class="header" id="navigation-menu">
+    <div class="container">
+      <nav>
+          <a href="#" class="logo"></a>
+          <ul class="nav-menu">
+            <li><a href="#plan" class="nav-link">PLAN&BOOK</a></li>
+            <li><a href="#fly" class="nav-link">FLY DIFFERENT</a></li>
+            <li><a href="#discover" class="nav-link">DISCOVER</a></li>
+            <li><a href="#miles" class="nav-link">MILES&SMILES</a></li>
+            <li><a href="#sign" class="nav-link">Sign Up</a></li>
+          </ul>
+          <a href="#" class="signIn_btn">
+            <button>Sign in</button></a>
+          <div class="spacey">
+            <span class="space"></span>
+            <span class="space"></span>
+            <span class="space"></span>
+        </div>
+       </nav>
+      </div>
+    </header>
+    <script>
+    const spacey = document.querySelector('.spacey');
+    const navMenu = document.querySelector('.nav-menu');
+
+    spacey.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      spacey.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      spacey.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+    </script>
+
+    <section class="home" id="home">
+      <div class="head_container">
+        <div class="box">
+          <div class="text">
+            <h1>Hello,</h1>
+            <p>Where do you want to explore?</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="img/Istanbul.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="book">
+      <div class="button-group">
+        <button class="button">
+          <i class="fas fa-plane"></i>
+          Flight
+        </button>
+        <button class="button">
+          <i class="fa-solid fa-plane-circle-check"></i>
+          Check-in / Manage booking
+        </button>
+        <button class="button">
+          <i class="fa-regular fa-clock"></i>
+          Flight status
+        </button>
+      </div>
+        <div class="container flex">
+          <div class="input grid">
+            <div class="box">
+              <label>From:</label>
+              <input class="selectBox" type="text" placeholder="İzmir" list="cityName">
+                <datalist id="cityName">
+                  <option value="Boston">
+                  <option value="Cambridge">
+                </datalist>
+            </div>
+            <div class="box">
+              <label>To:</label>
+              <input class="selectBox" type="text" placeholder="Ankara" list="cityName1">
+              <datalist id="cityName1">
+                <option value="Boston">
+                <option value="Cambridge">
+              </datalist>
+            </div>
+            <div class="box">
+              <label>Date:</label>
+              <input class="calender" type="date" placeholder="Check-out-Date">
+            </div>
+            <div class="box">
+              <label>Passenger:</label>
+              <input type="number" placeholder="0">
+            </div>
+          </div>
+          <div class="search">
+            <input type="submit" value="Search Flights">
+          </div>
+        </div>
+    </section>
+
+    <section class="about top" id="about">
+      <div class="panel">
+        <div class="container flex">
+            <div class="btn-group-1">
+              <button class="button">
+                <i class="fa-solid fa-swatchbook" style="font-size: 22px"></i><br>
+                Seat Selection
+              </button>
+              <button class="button">
+                <i class="fa-solid fa-suitcase-rolling" style="font-size: 22px"></i><br>
+                Extra Baggage
+              </button>
+              <button class="button">
+                <i class="fa-solid fa-hotel" style="font-size: 22px"></i><br>
+                Book a Hotel
+              </button>
+              <button class="button">
+                <i class="fa-solid fa-car" style="font-size: 22px"></i><br>
+                Rent a Car
+              </button>
+              <button class="button">
+                <i class="fa-solid fa-shield-halved" style="font-size: 22px"></i><br>
+                Travel Insurance
+              </button>
+              <button class="button">
+                <i class="fa-solid fa-gift" style="font-size: 22px"></i><br>
+                Gift Card
+              </button>
+            </div>
+        </div>
+      </div>
+
+
+
+</body>
+</html>
